@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .cell{
+            padding: 1.6rem;
+            border: 2px solid black;
+            display: flex;
+            width: 1rem;
+            margin: 6px;
+            border-radius: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: large;
+        }
+        .celll{
+            padding: 1.6rem;
+            border: 2px solid black;
+            display: flex;
+            width: 1rem;
+            margin: 6px;
+            border-radius: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: large;
+
+        }
+
+        .operator{
+            padding: 1.6rem;
+            border: 2px solid black;
+            display: flex;
+            width: 1rem;
+            margin: 6px;
+            border-radius: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: large;
+
+        }
+        .cell-1{
+            padding: 1rem;
+            border: 2px solid black;
+            display: flex;
+            width: 4rem;
+            margin: 2px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: large;
+        }
+
+        .row{
+            display: flex;
+        }
+
+        .outer1{
+            border: 2px solid black;
+            display: block;
+            width: 30%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            background-color: gray;
+            
+        }
+
+        #input
+        {
+            width: 90%;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border: 2px solid black;
+            font-size: large;
+        }
+
+        #result{
+            width: 90%;
+            padding: 1rem;
+            background-color: white;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border: 2px solid black;
+
+        }
+
+
+
+
+
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="outer1">
+    <div class="outer2" style="padding: 1rem; background-color: gray;">
+        <div class="display" >
+            <input type="text" id="result" value="" />
+        </div>
+        <!-- <div class="row" id="result"> -->
+
+        <!-- </div> -->
+        <div class="row">
+            <div class="cell" id="id7">7</div>
+            <div class="cell" id="id8">8</div>
+            <div class="cell" id="id9">9</div>
+            <div class="operator" id="id+">+</div>
+
+        </div>
+        <div class="row">
+            <div class="cell" id="id4">4</div>
+            <div class="cell" id="id5">5</div>
+            <div class="cell" id="id6">6</div>
+            <div class="operator" id="id-">-</div>
+
+        </div>
+        <div class="row">
+            <div class="cell" id="id1">1</div>
+            <div class="cell" id="id2">2</div>
+            <div class="cell" id="id3">3</div>
+            <div class="operator" id="id-">*</div>
+        </div>
+        <div class="row">
+            <div class="cell" id="idC">C</div>
+            <div class="cell" id="id0">0</div>
+            <div class="cell" id="id.">.</div>
+            <div class="operator" id="id/">/</div>
+        </div>
+        <div class="row" style="display: flex;justify-content: center;">
+            <div class="celll" id="iddel">DEL</div>
+            <div class="operator" id="id%">%</div>
+            <div class="cell" style="width: 4rem" id="equal">=</div>
+
+        </div>
+        <div class="row" style="display: flex;justify-content: center;">
+            <div class="cell" style="width: 4rem" id="idSubmit">SUBMIT</div>
+            <div class="cell" style="width: 4rem" id="idReset">RESET</div>
+        </div> 
+
+
+
+    </div>
+</div>
+   
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
