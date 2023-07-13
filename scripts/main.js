@@ -14,47 +14,47 @@ require.config({
 
     function FormViewModel()
     {
-      var self = this;
-      self.productId = ko.observable('');
-      self.name = ko.observable('');
-      self.type = ko.observable('');
-      self.quantity = ko.observable('');
-      self.availability = ko.observable('');
-      self.discountTypes = ko.observableArray([]);
+        var self = this;
+        self.productId = ko.observable('');
+        self.name = ko.observable('');
+        self.type = ko.observable('');
+        self.quantity = ko.observable('');
+        self.availability = ko.observable('');
+        self.discountTypes = ko.observableArray([]);
 
 
     }
     function AppViewModel() {
-      var self = this;
+        let self = this;
+        self.isSubmit = ko.observable(false)
 
 
-      self.isSubmit = ko.observable(false)
-      
-
-      self.forms = ko.observableArray([new FormViewModel()])
+        self.forms = ko.observableArray([new FormViewModel()])
 
 
-      self.addForm = function(){
+        self.addForm = function(){
 
         self.forms.push(new FormViewModel())
 
         
-      }
+        }
 
-      self.removeProduct = function(product){
+        self.removeProduct = function(product){
 
         self.forms.remove(product)
-      }
+         }
 
-      self.submitForm = function(){
-        self.isSubmit(true)
-      }
+        self.submitForm = function()
+        {
 
-      self.resetForm = function()
-      {
-        self.forms([])
-        
-      }
+          self.isSubmit(true)
+        }
+
+        self.resetForm = function()
+        {
+          self.forms([])
+          
+        }
 
 
   
@@ -67,8 +67,8 @@ require.config({
     // Register the product-form component
  
   
-  var appViewModel = new AppViewModel();
-  ko.applyBindings(appViewModel);
+        var appViewModel = new AppViewModel();
+        ko.applyBindings(appViewModel);
   });
   
   // <button type="button" data-bind="click: addProduct">Add</button>
