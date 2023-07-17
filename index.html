@@ -1,0 +1,68 @@
+<html>
+<html>
+<head>
+  <title>Knockout.js and Require.js Project</title>
+</head>
+<style>
+  tr,
+  td,
+  table {
+    border: 1px solid black;
+  }
+</style>
+
+<body>
+  <button data-bind="click: addForm">Add Form</button>
+  <button data-bind="click: submitForm">Submit Form</button>
+  <button data-bind="click: resetForm">Reset Form</button>
+  <div data-bind="foreach: forms">
+    <h2>Form</h2>
+    <label>Product ID: </label>
+    <input type="text" data-bind="value: productId" />
+    <label>Name: </label>
+    <input type="text" data-bind="value: productName" />
+    <label>Type: </label>
+    <select data-bind="value: productType">
+      <option value="mobile">Mobile</option>
+      <option value="desktop">Desktop</option>
+    </select>
+    <label>Quantity: </label>
+    <input type="number" data-bind="value: productQuantity" />
+    <label>Availability: </label>
+    <input type="radio" value="yes" data-bind="checked: availability" />Yes
+    <input type="radio" value="no" data-bind="checked: availability" />No
+    <label>Discount Type: </label>
+    <input type="checkbox" value="HDFC" data-bind="checked: discountTypes" />HDFC
+    <input type="checkbox" value="SBI" data-bind="checked: discountTypes" />SBI
+    <input type="checkbox" value="Mastercard" data-bind="checked: discountTypes" />Mastercard
+    <td><button data-bind="click: $parent.removeProduct">Remove</button></td>
+    <br /><br />
+  </div>
+  <div id="formsContainer">
+    <div id="form-table">
+      <table data-bind="visible: isSubmit">
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Quantity</th>
+            <th>Availability</th>
+            <th>Discount Types</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: forms">
+          <td data-bind="text: productId"></td>
+          <td data-bind="text: productName"></td>
+          <td data-bind="text: productType"></td>
+          <td data-bind="text: productQuantity"></td>
+          <td data-bind="text: productAvailability"></td>
+          <td data-bind="text: discountTypes"></td>
+        </tbody>
+      </table>
+    </div>
+    <script data-main="scripts/main" src="scripts/require.js"></script>
+</body>
+
+</html>
