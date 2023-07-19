@@ -74,11 +74,7 @@ class ParkingLot {
         $stmt->close();
         return $slots;
     }
-
-    
-
-
-
+  
     public static function isSlotAvailable($slotId) {
         $conn = DB::getConnection();
         $stmt = $conn->prepare("SELECT availability FROM parking_lots WHERE lotId = ?");

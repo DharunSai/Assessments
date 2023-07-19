@@ -50,7 +50,6 @@ class User {
     public static function signup($username, $password) {
         $conn = DB::getConnection();
         $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-        // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $stmt->bind_param("ss", $username, $password);
         $result = $stmt->execute();
         $stmt->close();

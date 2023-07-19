@@ -9,17 +9,14 @@ if (User::isLoggedIn()) {
 }
 
 function validateUsername($username) {
-    // Username pattern: only letters, numbers, and underscores are allowed
     $pattern = '/^[a-zA-Z0-9_]+$/';
     return preg_match($pattern, $username);
 }
 
 function validatePassword($password) {
-    // Password pattern: at least 8 characters with at least one uppercase letter, one lowercase letter, and one digit
     $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/';
     return preg_match($pattern, $password);
 }
-// Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -35,9 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     elseif (User::isUsernameAvailable($username)) {
        
         if (User::signup($username, $password)) {
-            
-            
-            
             header('Location: index.php');
             $success = "Signup successful! Please login.";
             
@@ -67,8 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input id="submitBtn" type="submit" value="Signup">
     </form>
     <br>
-
-    
+  
     <?php if (isset($error)) : ?>
         <p style="border: 2px solid red;padding: 2px;"><?php echo $error; ?></p>
     <?php endif; ?>
